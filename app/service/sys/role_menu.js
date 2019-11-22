@@ -117,7 +117,7 @@ class RoleMenuService extends Service {
     const list = await this.ctx.model.Sys.RoleMenu.findAll(include)
     const roleMenuObj = {}
     list.forEach((_role_menu)=>{
-      if(roleMenuObj.hasOwnProperty(_role_menu.role_id)){
+      if(Object.prototype.hasOwnProperty.call(roleMenuObj, _role_menu.role_id)){
         roleMenuObj[_role_menu.role_id].push(_role_menu.menu_id)
       }
       else{
