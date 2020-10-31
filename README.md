@@ -7,7 +7,7 @@ egg-sequelize
 sequelize-auto
 
 egg-validate 
-
+egg-swagger-doc
 
 
 菜单管理
@@ -31,7 +31,8 @@ see [egg docs][egg] for more detail.
 ```bash
 $ npm i
 $ npm run dev
-$ open http://localhost:7001/
+$ open http://localhost:7001/  
+$ swaggerUI http://localhost:7001/swagger-ui.html  
 ```
 
 ### Deploy

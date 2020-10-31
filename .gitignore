@@ -12,5 +12,5 @@ run/
 *.un~
 typings/
 .nyc_output/
-config/config.local.js
-config/config.local.json
+# config/config.local.js
+# config/config.local.json

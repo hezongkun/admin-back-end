@@ -11,6 +11,7 @@ module.exports = (options, app) => {
       ctx.status = 401
     }
     let authToken = ctx.header.authorization // 获取header里的authorization
+
     if (authToken) {
       authToken = authToken.substring(7)
       const res = verifyToken(ctx,authToken) // 解密获取的Token

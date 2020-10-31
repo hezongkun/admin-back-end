@@ -55,8 +55,11 @@ class SysUserController extends Controller {
   async info(){
     const { ctx, service } = this
     const payload = ctx.request.query || {}
+
     const menus = await service.sys.roleMenu.getUserMenu(ctx.locals.roleId,ctx.locals.isAdmin)
+
     const userInfo = await service.sys.user.find(ctx.locals.userId)
+
     let res = {
       menus:menus,
       userInfo:userInfo

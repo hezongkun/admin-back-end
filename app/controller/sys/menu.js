@@ -1,7 +1,9 @@
 const Controller = require('egg').Controller
 
 
-
+/**
+* @controller 菜单
+*/
 class SysMenuController extends Controller {
 
   constructor(ctx) {
@@ -11,7 +13,14 @@ class SysMenuController extends Controller {
       name: { type: 'string', required: true, allowEmpty: false },
     }
   }
-
+  /**
+    * @Authorization
+    * @summary test swagger--根据ID查询信息。
+    * @description 根据ID查询信息。
+    * @router post /sys/menu/save
+    * @request id  interget 需要去查新的ID
+    * @response 200 JsonBody 返回结果。
+    */
   async create() {
     const { ctx, service } = this
 

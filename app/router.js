@@ -8,7 +8,8 @@ module.exports = app => {
 
   const can = app.middleware.auth
 
-  router.get('/', controller.home.index)
+  // router.get('/', controller.home.index)
+  app.router.redirect('/swagger', '/swagger-ui.html', 302)
 
   // auth
   router.get('/auth/info',controller.sys.user.info)

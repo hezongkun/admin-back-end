@@ -1,7 +1,5 @@
 const Controller = require('egg').Controller
 
-
-
 class SysRoleMenuController extends Controller {
 
   constructor(ctx) {

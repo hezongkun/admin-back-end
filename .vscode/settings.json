@@ -1,4 +1,19 @@
 {
+  "fileheader.customMade": {
+    "Description": "", // 文件创建时间(不变)
+    "Author": "hezongkun@qq.com", // 文件创建时间(不变)
+    "Date": "Do not edit", // 文件创建时间(不变)
+    "LastEditors": "hezongkun@qq.com", // 文件最后编辑者
+    "LastEditTime": "Do not edit" // 文件最后编辑时间
+  },
+  "fileheader.cursorMode": {
+    "description": "",
+    "param": "",
+    "return": ""
+  },
+  "fileheader.configObj": {
+    "autoAdd": false, // 默认开启
+  },
   "files.associations": {
     "*.vue": "vue"
   },
@@ -31,5 +46,8 @@
   "typescript.format.insertSpaceAfterConstructor": true,
   "eslint.autoFixOnSave": true,
   "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-  "javascript.format.insertSpaceAfterConstructor": true
+  "javascript.format.insertSpaceAfterConstructor": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

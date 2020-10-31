@@ -1,5 +1,4 @@
-module.exports = action => {
-  
+module.exports = (action) => {
   return async function (ctx, next) {
     const noAccess = () => {
       ctx.body = {
@@ -8,20 +7,21 @@ module.exports = action => {
       }
       ctx.status = 403
     }
-    try {
+    let isAdmin = ctx.locals.isAdmin
+    if (isAdmin) {
+      await next()
+    } else {
       let menuID = await ctx.service.sys.auth.getAuthMenuByPermisson(action)
-      let hasRole = await ctx.service.sys.auth.checkRole(ctx.locals.roleId,menuID)
+      let hasRole = await ctx.service.sys.auth.checkRole(
+        ctx.locals.roleId,
+        menuID
+      )
 
-      let isAdmin = ctx.locals.isAdmin
-
-      if(isAdmin || hasRole){
+      if (hasRole) {
         await next()
-      }
-      else{
+      } else {
         noAccess()
       }
-    } catch (err) {
-      noAccess()
     }
   }
 }
